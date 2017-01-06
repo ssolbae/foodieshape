@@ -1,0 +1,83 @@
+body {
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/eb/75/f2/eb75f200e3106eeecd0f0ab0c3ed4fd3.jpg');
+	background-size: cover;
+	text-align: center;
+	padding: 100px;
+}
+
+.box {
+background-color: black;
+border: 1px solid;
+opacity: 0.6;
+filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.foodmain {
+	margin-top: 5%;
+	font-size: 50px;
+	font-family: Palatino, serif;
+	font-weight: bold;
+	color: white;
+	opacity: 1 !important;
+}
+
+input, .gender {
+	padding: 10px;
+	width: 300px;
+	color: white;
+  background: white;
+	/*opacity: 0.4;*/
+  border: none;
+}
+
+#height_ft {
+	width: 145px;
+}
+#height_in {
+	width: 145px;
+	margin-left: -290px;
+}
+.height {
+	float:left;
+}
+
+#current_weight {
+	width: 145px;
+}
+#goal_weight {
+	width: 145px;
+	margin-left: -290px;
+}
+.weight {
+	float:left;
+}
+
+label, input, .gender {
+    display: block;
+}
+
+input, select, textarea {
+    color: black;
+}
+
+label, .gender {
+	margin-left: 300px;
+  margin-bottom: 10px;
+	color: white;
+	opacity: 1 !important;
+}
+
+.weight_goals {
+	margin-left: 100px !important;
+}
+
+.buttons {
+	margin: 20px;
+	border-color: white;
+	cursor:pointer;
+  background-color: transparent;
+	color:white;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 31px;
+}

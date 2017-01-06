@@ -1,0 +1,20 @@
+{
+    "name": "FoodApp",
+    "description": "hackathon",
+    "dependencies": {
+        "cors": "*",
+        "async": "*",
+        "underscore": "*",
+        "request": "2.79.0",
+        "express": "*",
+        "moment": "*",
+        "d3": "*",
+        "jade": "*",
+        "cookie-parser": "*",
+        "redis": "*",
+        "jquery": "*",
+        "body-parser": "*",
+        "path": "*",
+        "crypto": "*"
+    }
+}

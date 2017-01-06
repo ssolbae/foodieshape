@@ -1,0 +1,29 @@
+body {
+	background-image: url(./../../../fooood.jpg);
+	background-size: cover;
+	text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.foodmain {
+	margin-top: 15%;
+	font-size: 50px;
+	font-family: Palatino, serif;
+	font-weight: bold;
+	color: white;
+}
+
+.buttons {
+	margin-top: 10%;
+	margin: 20px;
+	border-radius: 20px;
+	cursor:pointer;
+  background-color: green;
+	color:white;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+}
