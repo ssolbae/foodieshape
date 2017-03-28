@@ -30,6 +30,9 @@ app.post('/signup', auth.signup);
 app.post('/login', auth.login);
 app.get('/calories', food.getCalorie);
 app.get('/user', auth.getUserInfo);
+app.get('/', auth.index);
+app.get('/logout', auth.logout);
+app.get('/main', auth.main);
 
 // Specify static file path here
 app.use('/', express.static(__dirname + '/routes/static'))

@@ -8,6 +8,10 @@ var crypto = require('crypto'),
 
 module.exports = {
   encrypt: function (text){
+    if (!text) {
+      console.log("FUCKKKKKKK");
+      return null;
+    }
     var cipher = crypto.createCipher(algorithm,password)
     var crypted = cipher.update(text,'utf8','hex')
     crypted += cipher.final('hex');
@@ -15,6 +19,9 @@ module.exports = {
   },
 
   decrypt: function (text){
+    if (!text) {
+      return null;
+    }
     var decipher = crypto.createDecipher(algorithm,password)
     var dec = decipher.update(text,'hex','utf8')
     dec += decipher.final('utf8');

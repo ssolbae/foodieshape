@@ -2,13 +2,95 @@
   <head>
     <title>Food</title>
 
-    <link rel="stylesheet" href="./food.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./main.css" media="screen" charset="utf-8">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 
   </head>
 
   <body>
+    <main class= "box">
+      <div class="name"></div>
+      <p style="padding-bottom:0px; font-size:20px";>recommended calories to consume per day to lose</p>
+
+      <div class="lighterbox">
+        <p class="lbs info"></p>
+        <p style="margin-top:-6px; font-size:13px";>LBS</p>
+      </div>
+
+      <div style="float:left; margin-top:55px; margin-left:20px">in</div>
+
+      <div class="lighterbox" style="margin-left:20px!important">
+        <p class="days info"></p>
+        <p style="margin-top:-6px; font-size:13px";>DAYS</p>
+      </div>
+
+      <div style="float:left; margin-top:55px; margin-left:20px">=</div>
+
+      <div class="lighterbox" style="margin-left:20px!important">
+        <p class="cal info"></p>
+        <p style="margin-top:-6px; font-size:13px";>KCAL</p>
+      </div>
+    </main>
+
+    
+    <main class="box">
+      <div class="breakfast">
+
+        <div class="breakfast_image meal">
+          <div class="overlay">
+            <div class="text">BREAKFAST</div>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="breakfast_label label" style="padding: 19px!important"></div>
+          <div class="breakfast_calories">CALORIES </div>
+          <div class="breakfast_grams">GRAMS </div>
+        </div>
+
+      </div>
+    </main>
+
+    <main class="box">
+      <div class="lunch">
+
+        <div class="lunch_image meal">
+          <div class="overlay">
+            <div class="text">LUNCH</div>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="lunch_label label" style="padding: 19px!important"></div>
+          <div class="lunch_calories">CALORIES </div>
+          <div class="lunch_grams">GRAMS </div>
+        </div>
+
+      </div>
+    </main>
+
+    <main class="box">
+      <div class="dinner">
+
+        <div class="dinner_image meal">
+          <div class="overlay">
+            <div class="text">DINNER</div>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="dinner_label label" style="padding: 19px!important"></div>
+          <div class="dinner_calories">CALORIES </div>
+          <div class="dinner_grams">GRAMS </div>
+        </div>
+
+      </div>
+    </main>
+
+
+    <button class="buttons gray" type="button" id="logout_button">LOGOUT</button>
+
 
   </body>
 </html>

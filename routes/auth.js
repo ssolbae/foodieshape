@@ -5,10 +5,58 @@ var client = redis.createClient();
 
 //phrase같아. {~~} 전체 가지고와
 module.exports = {
+	main: function (request, response) {
+		var decrypted = encrypt_util.decrypt(request.cookies['auth_token']);
+		if (!decrypted) {
+			response.redirect('/index.html');
+			return;
+		}
+		client.get(decrypted, function (err, userInfo) {
+			if (!userInfo) {
+				response.redirect('/index.html');
+				return;
+			} else {
+					response.redirect('/login');
+			}
+		});
+	},
+
+	index: function (request, response) {
+		var decrypted = encrypt_util.decrypt(request.cookies['auth_token']);
+		if (!decrypted) {
+			console.log("SHOULD HITTT");
+			response.redirect('/index.html');
+			return;
+		}
+		client.get(decrypted, function (err, userInfo) {
+			if (!userInfo) {
+				response.redirect('/index.html');
+				return;
+			} else {
+				response.redirect('/main.html');
+			}
+		});
+	},
+
 	signup: function (request, response) {
-		// TODO : Username already exists message needs ot be there
+		// TODO : Username already exists message needs to be there
 		// behavior: store the user info into the DB, and redirect to login page
-		client.set(request.body.username, JSON.stringify(request.body));
+		var userInfo = request.body;
+		var kg = parseInt(userInfo.current_weight) / 2.2046226218;
+		var cm = ((parseInt(userInfo.height) * 12) + parseInt(userInfo.height_in)) * 2.54;
+		var age = parseInt(userInfo.age);
+		var bmr = (9.99 * kg) + (6.25 * cm) - (4.92 * age);
+		if (userInfo.gender === "male") {
+			bmr += 5;
+		}
+		else {
+			bmr -= 161;
+		}
+		bmr *= userInfo.activity_lvl;
+		console.log("user_info: " + JSON.stringify(userInfo));
+		userInfo.daily_cal = bmr - (parseInt(userInfo.current_weight) - parseInt(userInfo.goal_weight)) * 3500 / parseInt(userInfo.goaldate);
+
+		client.set(userInfo.username, JSON.stringify(request.body));
 		response.redirect('/login.html');
 	},
 	login: function (request, response) {
@@ -35,6 +83,11 @@ module.exports = {
 					response.redirect('/');
 				}
 		});
+	},
+
+	logout: function (request, response) {
+		response.clearCookie('auth_token', { path: '/' });
+		response.redirect('/');
 	},
 
 	getUserInfo: function (request, response) {

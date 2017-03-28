@@ -8,62 +8,57 @@
   <body>
     <main class= "box">
 
-      <main class="foodmain">
-        <p1>Foodie Shapes!</p>
-      	<div>
-        		<button class="buttons gray" type="button" onclick="location.href='login.html';">LOGIN</button>
-       	</div>
-      </main>
+      <div class="foodmain">
+        <p1>FOODIE SHAPES!</p>
+        <button class="buttons gray" type="button" onclick="location.href='login.html';">LOGIN</button>
+      </div>
 
 
-      <main class="signupmain">
-  		<form method="post" action="/signup">
-  	    	<label>
-  	        	<input size="30" type="text" id="name" name="name" placeholder="Name">
-  	      </label>
-  	      <label>
-  	        	<input size="30" type="text" id="username" name="username" placeholder="Username">
-  	    	</label>
-  	      <label>
-  	        	<input size="30" type="password" id="password" name="password" placeholder="Password">
-  	    	</label>
-          <select name="gender" class="gender">
-            <option selected="selected" size="30" value="gender">Gender</option>
-            <option size="30" value="male">Male</option>
-            <option size="30" value="female">Female</option>
-          </select>
-  	      <label>
-  	        	<input size="30" type="text" id="age" name="age" placeholder="Age">
-  	    	</label>
-  	      <label class="height">
-  	        	<input size="30" type="text" id="height_ft" name="height" placeholder="Height Ft.">
-  	    	</label>
-          <label class="height">
-  	        	<input size="30" type="text" id="height_in" name="height_in" placeholder="In.">
-  	    	</label>
-  	      <label class="weight">
-  	        	<input size="30" type="text" id="current_weight" name="current_weight" placeholder="Current Weight (lbs)">
-  	    	</label>
-          <label class="weight">
-  	        	<input size="30" type="text" id="goal_weight" name="goal_weight" placeholder="Goal Weight (lbs)">
-  	    	</label>
-          <label>
-              <input size="30" type="text" id="goaldate" name="goaldate" placeholder="Goal Date (days)">
-          </label>
-          <select name="activity_lvl" class="activity_lvl">
-            <option selected="selected" size="30" value="activity_lvl">Activity Level</option>
-            <option size="30" value="1.2">Sedentary</option>
-            <option size="30" value="1.375">Lightly Active</option>
-            <option size="30" value="1.55">Moderate</option>
-            <option size="30" value="1.725">Active</option>
-            <option size="30" value="1.9">Very Active</option>
-          </select>
-
-
-
-  	    	<button class="buttons green" >Sign Up</button>
-  	    </form>
-      </main>
+      <div>
+    		<form method="post" action="/signup">
+    	    	<label>
+    	        	<input size="30" type="text" id="name" name="name" placeholder="Name">
+    	      </label>
+    	      <label>
+    	        	<input size="30" type="text" id="username" name="username" placeholder="Username">
+    	    	</label>
+    	      <label>
+    	        	<input size="30" type="password" id="password" name="password" placeholder="Password">
+    	    	</label>
+            <select name="gender" class="dropdown">
+              <option selected="selected" size="30" value="gender">Gender</option>
+              <option size="30" value="male">Male</option>
+              <option size="30" value="female">Female</option>
+            </select>
+    	      <label>
+    	        	<input size="30" type="text" id="age" name="age" placeholder="Age">
+    	    	</label>
+    	      <label class="height">
+    	        	<input size="30" type="text" id="height_ft" name="height" placeholder="Height Ft.">
+    	    	</label>
+            <label class="height">
+    	        	<input size="30" type="text" id="height_in" name="height_in" placeholder="In.">
+    	    	</label>
+    	      <label class="weight">
+    	        	<input size="30" type="text" id="current_weight" name="current_weight" placeholder="Current Weight (lbs)">
+    	    	</label>
+            <label class="weight">
+    	        	<input size="30" type="text" id="goal_weight" name="goal_weight" placeholder="Goal Weight (lbs)">
+    	    	</label>
+            <label>
+                <input size="30" type="text" id="goaldate" name="goaldate" placeholder="Goal Date (days)">
+            </label>
+            <select name="activity_lvl" class="dropdown">
+              <option selected="selected" size="30" value="activity_lvl">Activity Level</option>
+              <option size="30" value="1.2">Sedentary</option>
+              <option size="30" value="1.375">Lightly Active</option>
+              <option size="30" value="1.55">Moderate</option>
+              <option size="30" value="1.725">Active</option>
+              <option size="30" value="1.9">Very Active</option>
+            </select>
+    	    	<button class="buttons signup_button">Sign Up</button>
+    	    </form>
+      </div>
     </main>
 
     <script src="./food.js"></script>
