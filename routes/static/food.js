@@ -5,4 +5,3 @@ function signupRequest(body) {
     $("body").html('<img id="theImg" src="' + image_url + '"/>');
   });
 }
-

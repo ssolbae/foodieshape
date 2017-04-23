@@ -24,7 +24,6 @@ module.exports = {
 	index: function (request, response) {
 		var decrypted = encrypt_util.decrypt(request.cookies['auth_token']);
 		if (!decrypted) {
-			console.log("SHOULD HITTT");
 			response.redirect('/index.html');
 			return;
 		}
@@ -53,9 +52,7 @@ module.exports = {
 			bmr -= 161;
 		}
 		bmr *= userInfo.activity_lvl;
-		console.log("user_info: " + JSON.stringify(userInfo));
 		userInfo.daily_cal = bmr - (parseInt(userInfo.current_weight) - parseInt(userInfo.goal_weight)) * 3500 / parseInt(userInfo.goaldate);
-
 		client.set(userInfo.username, JSON.stringify(request.body));
 		response.redirect('/login.html');
 	},
@@ -66,7 +63,6 @@ module.exports = {
             	//	-> if the user is not authenticated, redirect to login page and show error.
 
 		client.get(request.body.username, function(err, userInfo) {
-				console.log(userInfo);
 				userInfo = JSON.parse(userInfo);
 				if (userInfo === null) {
 					response.redirect('/');
@@ -87,12 +83,12 @@ module.exports = {
 
 	logout: function (request, response) {
 		response.clearCookie('auth_token', { path: '/' });
+
 		response.redirect('/');
 	},
 
 	getUserInfo: function (request, response) {
 		var auth_token = request.cookies['auth_token'];
-		console.log(auth_token);
 		if (!auth_token) {
 			// do something
 			response.send("You are not logged in!");

@@ -1,7 +1,8 @@
 //controller for getting food APIs
 var req = require('request');
 var redis = require('redis');
-tvar client = redis.createClient();
+var encrypt_util = require('./../util/encrypt_util.js')
+var client = redis.createClient();
 var async = require('async');
 var APP_ID = "e70975c3";
 var APP_KEY = "385b9c2b7534484726391d264e192213";
@@ -10,7 +11,6 @@ module.exports = {
 	getCalorie: function (request, response) {
 		// TODO
 		var auth_token = request.cookies['auth_token'];
-		console.log(auth_token);
 		if (!auth_token) {
 			// do something
 			response.send("You are not logged in!");
@@ -33,7 +33,6 @@ module.exports = {
 			(function () {
 				//url is eg of closure
 				var url = "https://api.edamam.com/search?q=" + search_key[i] + "&app_id=" + APP_ID + "&app_key=" + APP_KEY + "&from=0&to=" + 1 + "&calories=gte%20" + cal_lower + "%2C%20lte%20" + cal_upper + "&health=alcohol-free";
-				console.log("url: " + url);
 				var task = function (done) {
 					req(url, function (err, resp, body) {
 						if (err) {
@@ -46,7 +45,6 @@ module.exports = {
 							tmp.url = data.hits[0].recipe.url;
 							tmp.image = data.hits[0].recipe.image;
 							tmp.label = data.hits[0].recipe.label;
-							console.log("FUCKING LABEL: " + tmp.label);
 							tmp.calories = cal_lower + "-" + cal_upper;
 							tmp.grams = Math.floor((cal_lower+cal_upper)/2 / Math.floor((data.hits[0].recipe.calories)/(data.hits[0].recipe.totalWeight)));
 							data_to_send.push(tmp);
@@ -67,10 +65,8 @@ module.exports = {
 	getRecipes: function (request, response) {
 		// TODO
 		var decrypted = encrypt_util.decrypt(request.cookies['auth_token']);
-		console.log(request.cookies['auth_token']);
 		client.get(decrypted, function (err, userInfo) {
 			//params쓰면 address에 inform
-			console.log(userInfo);
 			var params = request.query;
 			var cal_lower = params.cal_lower;
 			var cal_upper = params.cal_upper;
@@ -78,7 +74,6 @@ module.exports = {
 			// TODO: change q=chicken to something else l8er
 			var url = "https://api.edamam.com/search?q=chicken&app_id=" + APP_ID + "&app_key=" + APP_KEY + "&from=0&to=" + count + "&calories=gte%20" + cal_lower + "%2C%20lte%20" + cal_upper + "&health=alcohol-free";
 			req(url, function (err, resp, body) {
-				// console.log(resp);
 				response.json(JSON.parse(body));
 			});
 		});

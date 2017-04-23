@@ -1,7 +1,6 @@
 $(document).ready(function() {
   var url = '/calories';
   $.get(url, function(data) {
-    console.log(data);
     // data = [{url: --, image: 00}, {..}, {..}];
     // IIF
     (function() {
@@ -21,11 +20,7 @@ $(document).ready(function() {
           $(key[i]+'_grams').append(grams);
 
 
-          console.log("WTFFFFFF: " + calories);
-          console.log("HI? : " + JSON.stringify($( ".image" + "#" + i)));
-          console.log("GG: " + i);
           $( ".image" + "#" + i).click(function() {
-            console.log(url);
             window.open(url, '_blank');
           });
           // to here

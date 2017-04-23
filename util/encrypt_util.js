@@ -9,7 +9,6 @@ var crypto = require('crypto'),
 module.exports = {
   encrypt: function (text){
     if (!text) {
-      console.log("FUCKKKKKKK");
       return null;
     }
     var cipher = crypto.createCipher(algorithm,password)
