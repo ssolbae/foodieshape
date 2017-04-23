@@ -1,0 +1,115 @@
+body {
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/eb/75/f2/eb75f200e3106eeecd0f0ab0c3ed4fd3.jpg');
+	background-size: cover;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.box {
+  margin-left: 21%;
+  margin-right: 10%;
+  height: 200px;
+	width: 50%;
+	background-color: rgba(0,0,0,0.65);
+  font-family : avenir;
+  color: white;
+  border-radius: 3px;
+	padding: 50px;
+	padding-bottom: 90px;
+	padding-top: 10px;
+}
+
+.lighterbox {
+  position: relative;
+  margin-top: 5%;
+  margin-left: 15%;
+  float: left;
+  width: 15% !important;
+  height: 25% !important;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+/*.foodmain {
+	font-size: 50px;
+	font-weight: bold;
+}*/
+
+.name {
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 30px;
+}
+
+.info {
+  font-size: 2.3vw;
+  margin-top: 0px;
+  margin-bottom: 1% !important;
+}
+
+.whitebox {
+	background-color: white;
+  height: 300px;
+  width: 30%;
+	padding-top: 30px;
+	/*padding-left: 50px;*/
+  font-family : avenir;
+  color: black;
+  border-radius: 3px;
+  float:left;
+}
+
+.label {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.side {
+	float: center;
+}
+
+
+
+
+/*hover effects*/
+.meal {
+  position: relative;
+  width: 50%;
+	float: left;
+}
+.image {
+  display: block;
+  width: 90%;
+  height: 100%;
+	border-radius: 10px;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+	border-radius: 10px;
+	pointer-events:none
+}
+.meal:hover .overlay {
+  width: 90%;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+.text {
+	font-weight: bold;
+  white-space: nowrap;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
