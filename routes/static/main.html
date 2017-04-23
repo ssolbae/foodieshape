@@ -3,6 +3,7 @@
     <title>Food</title>
 
     <link rel="stylesheet" href="./main.css" media="screen" charset="utf-8">
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 
@@ -10,7 +11,9 @@
 
   <body>
     <main class= "box">
-      <div class="name"></div>
+      <button class="buttons gray" type="button" id="logout_button">LOGOUT</button>
+
+      <div class="name" style="display:inline;">Welcome </div>
       <p style="padding-bottom:0px; font-size:20px";>recommended calories to consume per day to lose</p>
 
       <div class="lighterbox">
@@ -39,7 +42,7 @@
 
         <div class="breakfast_image meal">
           <div class="overlay">
-            <div class="text">BREAKFAST</div>
+            <div class="text" style="font-size:2vw">BREAKFAST<br>click to see the recipe!</div>
           </div>
         </div>
 
@@ -57,7 +60,7 @@
 
         <div class="lunch_image meal">
           <div class="overlay">
-            <div class="text">LUNCH</div>
+            <div class="text" style="font-size:2vw">LUNCH<br>click to see the recipe!</div>
           </div>
         </div>
 
@@ -75,7 +78,7 @@
 
         <div class="dinner_image meal">
           <div class="overlay">
-            <div class="text">DINNER</div>
+            <div class="text" style="font-size:2vw">DINNER<br>click to see the recipe!</div>
           </div>
         </div>
 
@@ -89,7 +92,6 @@
     </main>
 
 
-    <button class="buttons gray" type="button" id="logout_button">LOGOUT</button>
 
 
   </body>
